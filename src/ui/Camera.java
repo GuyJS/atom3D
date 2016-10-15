@@ -68,11 +68,17 @@ public class Camera extends Group implements Animateable {
 
     @Override
     public void animate(long t) {
-        if( keyHandler.isKeyDown(KeyCode.UP) ){
+        if( keyHandler.isKeyDown(KeyCode.W) ){
             movement.moveForward(MOVEMENT_SPEED);
         }
-        if( keyHandler.isKeyDown(KeyCode.DOWN) ){
+        if( keyHandler.isKeyDown(KeyCode.S) ){
             movement.moveBack(MOVEMENT_SPEED);
+        }
+        if( keyHandler.isKeyDown(KeyCode.A) ){
+            movement.strafeLeft(MOVEMENT_SPEED);
+        }
+        if( keyHandler.isKeyDown(KeyCode.D) ){
+            movement.strafeRight(MOVEMENT_SPEED);
         }
         if( keyHandler.isKeyDown(KeyCode.LEFT)){
             movement.rotateACW(ROTATION_SPEED);
