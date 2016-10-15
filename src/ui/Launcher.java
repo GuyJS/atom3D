@@ -35,7 +35,6 @@ public class Launcher extends Application {
         root.getChildren().addAll(sphere, light, rec);
         primaryStage.addEventHandler(KeyEvent.ANY, context.getKeyHandler());
 
-
         primaryStage.setScene(scene);
         primaryStage.show();
 
