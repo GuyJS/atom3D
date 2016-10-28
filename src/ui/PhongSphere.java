@@ -2,6 +2,7 @@ package ui;
 
 import animation.Animateable;
 import javafx.animation.AnimationTimer;
+import javafx.geometry.Point3D;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.Sphere;
@@ -61,6 +62,10 @@ public class PhongSphere extends Sphere implements Animateable {
         this.y = y;
         this.z = z;
         updatePosition();
+    }
+
+    public Point3D getPos(){
+        return new Point3D(x, y, z);
     }
 
     @Override

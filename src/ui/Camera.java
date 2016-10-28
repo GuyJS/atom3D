@@ -54,6 +54,8 @@ public class Camera extends Group implements Animateable {
         cam.setFarClip(farClip);
         cam.setFieldOfView(fov);
         cam.setRotationAxis(new Point3D(0, -1, 0));
+        cam.setTranslateZ(-100);
+        cam.setTranslateY(-50);
         return cam;
     }
 
@@ -85,6 +87,12 @@ public class Camera extends Group implements Animateable {
         }
         if( keyHandler.isKeyDown(KeyCode.RIGHT)){
             movement.rotateCW(ROTATION_SPEED);
+        }
+        if( keyHandler.isKeyDown(KeyCode.UP)){
+            movement.moveUp(MOVEMENT_SPEED);
+        }
+        if( keyHandler.isKeyDown(KeyCode.DOWN)){
+            movement.moveDown(MOVEMENT_SPEED);
         }
     }
 }

@@ -49,6 +49,14 @@ public class NodeMovementCalculator {
         node.setTranslateX(node.getTranslateX() - (amount * xComp));
         node.setTranslateZ(node.getTranslateZ() - (amount * zComp));
     }
+
+    public void moveUp(double amount){
+        node.setTranslateY(node.getTranslateY() - amount);
+    }
+
+    public void moveDown(double amount){
+        node.setTranslateY(node.getTranslateY() + amount);
+    }
     
     public void rotateACW(double deg){
         double rotation = node.getRotate();

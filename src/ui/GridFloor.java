@@ -14,7 +14,7 @@ public class GridFloor {
     private Color colour1;
     private Color colour2;
 
-    Node[] grid;
+    private Node[] grid;
 
     public GridFloor(int rows, int cols, int cellSize, Color colour1, Color colour2){
         this.rows = rows;
