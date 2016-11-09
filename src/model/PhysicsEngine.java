@@ -11,6 +11,8 @@ import java.util.List;
 
 public class PhysicsEngine implements Animateable {
 
+    public static final double DAMPING_FACTOR = 0.995;
+    public static final int MINIMUM_SPEED = 5;
     private int protonNum;
     private int neutronNum;
     private Context context;
@@ -32,10 +34,14 @@ public class PhysicsEngine implements Animateable {
         neutrons = new PhongParticle[neutronNum];
 
         for(int i = 0 ; i < protonNum ; i++){
-            protons[i] = new PhongParticle(new Proton(), 5, Color.RED, Color.ORANGE, context);
+            PhongParticle proton = new PhongParticle(new Proton(), MINIMUM_SPEED, Color.RED, Color.ORANGE, context);
+            proton.setDampingValues(DAMPING_FACTOR, MINIMUM_SPEED);
+            protons[i] = proton;
         }
         for(int i = 0 ; i < neutronNum ; i++){
-            neutrons[i] = new PhongParticle(new Neutron(), 5, Color.BLUE, Color.LIGHTBLUE, context);
+            PhongParticle neutron = new PhongParticle(new Neutron(), MINIMUM_SPEED, Color.BLUE, Color.LIGHTBLUE, context);
+            neutron.setDampingValues(DAMPING_FACTOR, MINIMUM_SPEED);
+            neutrons[i] = neutron;
         }
     }
 
